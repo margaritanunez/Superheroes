@@ -21,7 +21,7 @@ class ListFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentListBinding.inflate(layoutInflater, container, false)
         initAdapter()
-        superheroeViewModel.getAlllSuperheroes()
+        superheroeViewModel.getAlllSuperheroesViewModel()
         return binding.root
     }
 

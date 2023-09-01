@@ -18,11 +18,16 @@ class SuperheroeViewModel (application:Application): AndroidViewModel(applicatio
         repository = Repository(superheroeApi, superheroeDataBase)
     }
 
-    //Listado productos
+    //Listado superheroes
 
     fun superheroeLiveData() = repository.getSuperheroeEntity()
-
-    fun getAlllSuperheroes() = viewModelScope.launch {
+    fun getAlllSuperheroesViewModel() = viewModelScope.launch {
         repository.chargeAllSuperheroes()
+    }
+
+    //Detalle superheroes
+    fun detailSuperheroeLiveData(id: Int) = repository.getDetailSuperheroeEntity(id)
+    fun getDetailsSuperheroeViewModel(id: Int) = viewModelScope.launch {
+        repository.chargeDetailSuperheroe(id)
     }
 }
