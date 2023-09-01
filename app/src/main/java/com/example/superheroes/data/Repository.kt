@@ -30,15 +30,6 @@ class Repository(private val superheroeApi : SuperheroeApi, private val superher
         }
     }
 
-    private fun Superheroe.transformToEntity(): SuperheroeEntity = SuperheroeEntity(
-        this.id,
-        this.name,
-        this.origin,
-        this.imageLink,
-        this.power,
-        this.yearCreation
-    )
-
     //Detalle de acuerdo al ID seleccionado
 
     fun getDetailSuperheroeEntity(id: Int): LiveData<DetailSuperheroeEntity> =
@@ -60,17 +51,6 @@ class Repository(private val superheroeApi : SuperheroeApi, private val superher
             Log.e("catch", "")
         }
     }
-    private fun DetailSuperheroe.transformToDetailEntity(): DetailSuperheroeEntity =
-        DetailSuperheroeEntity(
-            this.id,
-            this.name,
-            this.origin,
-            this.imageLink,
-            this.power,
-            this.yearCreation,
-            this.colour,
-            this.translation
-        )
 
 }
 
