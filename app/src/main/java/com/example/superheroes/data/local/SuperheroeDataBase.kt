@@ -5,7 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database (entities = [SuperheroeEntity::class], version = 1)
+@Database (entities = [SuperheroeEntity::class, DetailSuperheroeEntity::class], version = 1)
 abstract class SuperheroeDataBase : RoomDatabase(){
 
     abstract fun getSuperheroeDao() : SuperheroeDao
