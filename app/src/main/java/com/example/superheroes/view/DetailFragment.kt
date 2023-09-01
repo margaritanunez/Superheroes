@@ -1,5 +1,7 @@
 package com.example.superheroes.view
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -52,8 +54,29 @@ class DetailFragment : Fragment() {
                 } else {
                     binding.tvTranslationDetail.text = "Cuenta con traducción al español"
                 }
+                val id = it.id
+
+                binding.floatingButtonEmail!!.setOnClickListener {
+                    sendEmail(id)
+                }
             }
         }
+    }
+
+    private fun sendEmail(id: Int) {
+        //mail cliente
+        val destinatario = getString(R.string.destinatario_email)
+        val intentEmail = Intent(Intent.ACTION_SEND, Uri.parse(destinatario))
+        intentEmail.type = "plain/text"
+        //destinatario
+        intentEmail.putExtra(Intent.EXTRA_EMAIL,arrayOf(destinatario))
+        //asunto
+        intentEmail.putExtra(Intent.EXTRA_SUBJECT,getString(R.string.asunt_email,id))
+        //cuerpo correo
+        //intentEmail.putExtra(Intent.EXTRA_TEXT,getString(R.string.body_email,id))
+
+        startActivity(Intent.createChooser(intentEmail, "Votación superheroe"))
+
     }
 
 }

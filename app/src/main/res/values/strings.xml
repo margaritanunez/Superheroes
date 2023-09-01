@@ -3,4 +3,8 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="send_email">Send Email</string>
+    <string name="body_email">Hola\n Quiero que el siguiente super héroes aparezca, en la nueva edición de
+biografías animadas. \n Número contacto: \n Gracias.</string>
+    <string name="destinatario_email">Comicconchile@hotmail.com</string>
+    <string name="asunt_email">Votación id %1$d.</string>
 </resources>
