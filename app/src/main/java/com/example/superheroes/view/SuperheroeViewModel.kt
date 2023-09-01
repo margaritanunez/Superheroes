@@ -1,4 +1,4 @@
-package com.example.superheroes.data.view
+package com.example.superheroes.view
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
@@ -17,6 +17,10 @@ class SuperheroeViewModel (application:Application): AndroidViewModel(applicatio
         val superheroeDataBase = SuperheroeDataBase.getDatabase(application).getSuperheroeDao()
         repository = Repository(superheroeApi, superheroeDataBase)
     }
+
+    //Listado productos
+
+    fun superheroeLiveData() = repository.getSuperheroeEntity()
 
     fun getAlllSuperheroes() = viewModelScope.launch {
         repository.chargeAllSuperheroes()
